@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <script src="/main.js" defer></script>
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+    <title>add about</title>
+</head>
+
+<body class="bg-secondary d-flex justify-content-center flex-column vh-100">
+    <form method="post" class="bg-black my-auto rounded-4 text-light p-3 d-inline-flex mx-auto w-50 flex-column"
+        autocomplete="off">
+        add about you
+        <textarea name="about" id="about" class="my-3" rows="7" autofocus placeholder="add about"></textarea>
+        <input type="submit" value="send" class="w-25 mx-auto btn btn-dark btn-outline-success">
+        <span id="skip" class="mx-auto link-info btn text-decoration-underline">
+            <%= back %>
+        </span>
+    </form>
+</body>
+
+</html>

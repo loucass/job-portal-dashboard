@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="createPost.js" defer></script>
+    <title>creating new post</title>
+    <style>
+        body {
+            margin-top: 20px;
+            color: #1a202c;
+            text-align: left;
+            background-color: #e2e8f0;
+        }
+
+        .main-body {
+            padding: 15px;
+        }
+
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+        }
+
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem;
+        }
+
+        .gutters-sm {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+
+        .gutters-sm>.col,
+        .gutters-sm>[class*=col-] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+
+        .mb-3,
+        .my-3 {
+            margin-bottom: 1rem !important;
+        }
+
+        .bg-gray-300 {
+            background-color: #e2e8f0;
+        }
+
+        .h-100 {
+            height: 100% !important;
+        }
+
+        .shadow-none {
+            box-shadow: none !important;
+        }
+
+        textarea {
+            border: none;
+            outline: none;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-body">
+            <nav aria-label="breadcrumb" class="main-breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/home">home</a></li>
+                    <li class="breadcrumb-item"><a href="/profile">profile</a></li>
+                </ol>
+            </nav>
+            <div class="gutters-sm">
+                <div class="card">
+                    <div class="card-body">
+
+                        <form method="post" id="<%= type=='post'? 'createPost':'createJob' %>" autocomplete="off"
+                            class="w-100">
+                            <% if (type=="post" ) { %>
+                                <span class="d-block start-0">post content:</span>
+                                <% }else{ %>
+                                    <span class="d-block start-0">job details :</span>
+                                    <hr>
+                                    job title :
+                                    <input type="text" name="jobTitle" id="jobTitle" required>
+                                    <br><br>
+                                    job location <span class="text-info">(default : online)</span> :
+                                    <input type="text" name="jobLocation" id="jobLocation">
+                                    <br><br>
+                                    <% } %>
+                                        <textarea type="text" name="content" id="content" class="w-100"
+                                            placeholder="<%= type=='post'? 'post content':'job description' %>"" rows="
+                                            10" required></textarea><br>
+                                        <input type="submit" value="publish"
+                                            class="my-3 mx-auto d-flex btn btn-success btn-outline-dark">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
